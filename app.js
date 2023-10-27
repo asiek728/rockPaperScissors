@@ -1,5 +1,3 @@
-//npm install prompt-sync
-
 const prompt = require('prompt-sync')({ sigint: true });
 
 let userScore = 0;
@@ -11,14 +9,14 @@ let exitPlay = false;
 
 const printCommands = () => {
     console.log("The game accepts the following commands:")
-    console.log("start      -   start a new game")
-    console.log("score      -   check your score")
-    console.log("exit       -   stop the game")
-    console.log("help   -   display list of possible commands again")
+    console.log("start          -   start a new game")
+    console.log("score          -   check your score")
+    console.log("exit           -   stop the game")
+    console.log("help           -   display list of possible commands again")
     console.log("When in game: ")
-    console.log("rock       -   choose rock")
-    console.log("paper      -   choose paper")
-    console.log("scissors   -   choose scissors")
+    console.log("rock or r      -   choose rock")
+    console.log("paper or p     -   choose paper")
+    console.log("scissors or s  -   choose scissors")
 }
 
 const results = (u, c) => {
