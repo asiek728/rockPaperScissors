@@ -3,7 +3,7 @@
     - npm install
 
 
-## Use the following command in the game:
+## Use the following commands in the game:
     - start      -   start a new game
     - score      -   check your score
     - exit       -   stop the game
@@ -16,6 +16,5 @@
     - score         -   check your score
     - exit          -   stop the game
     - help          -   display list of possible commands again
-
-
+    
 ## Have fun!
