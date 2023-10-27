@@ -1,3 +1,4 @@
+const colours = require('ansi-colors');
 const prompt = require('prompt-sync')({ sigint: true });
 
 let userScore = 0;
@@ -8,12 +9,12 @@ let exit = false;
 let exitPlay = false;
 
 const printCommands = () => {
-    console.log("The game accepts the following commands:")
+    console.log(colours.magenta("The game accepts the following commands:"))
     console.log("start          -   start a new game")
     console.log("score          -   check your score")
     console.log("exit           -   stop the game")
     console.log("help           -   display list of possible commands again")
-    console.log("When in game: ")
+    console.log(colours.magenta("When in game: "))
     console.log("rock or r      -   choose rock")
     console.log("paper or p     -   choose paper")
     console.log("scissors or s  -   choose scissors")
@@ -21,14 +22,14 @@ const printCommands = () => {
 
 const results = (u, c) => {
     if (u === c) {
-        console.log("Tie!");
+        console.log(colours.yellow("Tie!"));
     }
     else if ((u === 0 && c === 2) || (u === 1 && c === 0) || (u === 2 && c === 1)) {
-        console.log("You won!");
+        console.log(colours.green("You won!"));
         userScore++;
     }
     else {
-        console.log("You lost!");
+        console.log(colours.red("You lost!"));
         computerScore++;
     }
     console.log("Do you want to start a new game? y or n");
@@ -51,7 +52,7 @@ const newGame = () => {
         computerChoice = Math.floor(Math.random() * 3);
 
         if (userInput === 'exit') {
-            console.log('Bye!');
+            console.log(colours.cyan('Bye!'));
             exitPlay = true;
             exit = true;
         }  else if (userInput === 'score') {
@@ -78,9 +79,9 @@ const newGame = () => {
 }
 
 const startGame = () => {
-    console.log("Welcome to Rock Paper Scissors Game!")
+    console.log(colours.cyan("Welcome to Rock Paper Scissors Game!"));
     printCommands();
-    console.log("Have fun!")
+    console.log(colours.cyan("Have fun!"))
 
     console.log('Please enter one of the commands: ');
 
@@ -88,7 +89,7 @@ const startGame = () => {
         let userInput = prompt('');
 
         if (userInput === 'exit') {
-            console.log('Bye!');
+            console.log(colours.cyan('Bye!'));
             exit = true;
         } else if (userInput === 'start') {
             exitPlay = false;
